@@ -1,0 +1,232 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Renuka | Python Full Stack Developer
+    </title>
+
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    {% block extra_css %}
+    {% endblock %}
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <a href="{% url 'home' %}" class="logo">
+                <img src="{% static 'images/renulogo.png' %}" alt="Logo" class="logo-img">
+                <span>My Portfolio</span>
+            </a>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="{% url 'home' %}" class="{% if request.path == '/' %}active{% endif %}">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'about' %}" class="{% if '/about/' in request.path %}active{% endif %}">
+                        <i class="fa-solid fa-user"></i>
+                        <span>About</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'skills' %}" class="{% if '/skills/' in request.path %}active{% endif %}">
+                        <i class="fa-solid fa-laptop-code"></i>
+                        <span>Skills</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'services' %}" class="{% if '/services/' in request.path %}active{% endif %}">
+                        <i class="fa-solid fa-briefcase"></i>
+                        <span>Services</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'projects' %}" class="{% if '/projects/' in request.path %}active{% endif %}">
+                        <i class="fa-solid fa-diagram-project"></i>
+                        <span>Projects</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'resume' %}" class="{% if '/resume/' in request.path %}active{% endif %}">
+                        <i class="fa-solid fa-file-lines"></i>
+                        <span>Resume</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'contact' %}" class="{% if '/contact/' in request.path %}active{% endif %}">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>Contact</span>
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <!-- About -->
+
+            <div class="footer-column">
+
+                <h2 class="footer-logo">
+                    My Portfolio
+                </h2>
+
+                <p>
+                    Python Full Stack Developer specializing in
+                    Django, Python, HTML, CSS, JavaScript and
+                    responsive web applications.
+                </p>
+
+            </div>
+
+            <!-- Quick Links -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="{% url 'home' %}">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'about' %}">
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'skills' %}">
+                            Skills
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'projects' %}">
+                            Projects
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'contact' %}">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <!-- Contact -->
+
+            <div class="footer-column">
+
+                <h3>Contact Info</h3>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="mailto:renusana525@gmail.com">
+                        renusana525@gmail.com
+                    </a>
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    <a href="tel:+919514242834">
+                        +91 95142 42834
+                    </a>
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Chennai, India
+                </p>
+
+            </div>
+
+            <!-- Social -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Follow Me
+                </h3>
+
+                <div class="social-links">
+
+                    <a href="#">
+                        GitHub
+                    </a>
+
+                    <a href="#">
+                        LinkedIn
+                    </a>
+
+                    <a href="#">
+                        Instagram
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Renuka | Python Full Stack Developer
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

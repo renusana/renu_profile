@@ -1,0 +1,213 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/skills.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+
+<section class="skills-hero">
+
+    <span class="badge">
+        My Expertise
+    </span>
+
+    <h1>
+        Skills & Technologies
+    </h1>
+
+    <p>
+        A combination of technical expertise,
+        problem-solving ability and modern
+        web development skills.
+    </p>
+
+</section>
+
+<!-- TECHNICAL SKILLS -->
+
+<section class="skill-section">
+
+    <h2>Technical Skills</h2>
+
+    <div class="skills-grid">
+
+        {% for skill in technical_skills %}
+
+        <div class="skill-card">
+
+            <!-- Skill Image -->
+            <div class="skill-image">
+
+                {% if skill.skill_image %}
+                <img src="{{ skill.skill_image.url }}" alt="{{ skill.skill_name }}">
+                {% endif %}
+
+            </div>
+
+            <!-- Name & Percentage -->
+            <div class="skill-head">
+
+                <h3>{{ skill.skill_name }}</h3>
+
+                <span>{{ skill.percentage }}%</span>
+
+            </div>
+
+            <!-- Description -->
+            <small class="skill-desc">
+                {{ skill.description }}
+            </small>
+
+            <!-- Progress -->
+            <div class="progress">
+
+                <div class="progress-bar" data-progress="{{ skill.percentage }}">
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+<!-- PROFESSIONAL SKILLS -->
+
+<section class="skill-section light">
+
+    <h2>Professional Skills</h2>
+
+    <div class="skills-grid">
+
+        {% for skill in professional_skills %}
+
+        <div class="skill-card">
+
+            <!-- Skill Image -->
+            <div class="skill-image">
+
+                {% if skill.skill_image %}
+                <img src="{{ skill.skill_image.url }}" alt="{{ skill.skill_name }}">
+                {% endif %}
+
+            </div>
+
+            <!-- Skill Name & Percentage -->
+            <div class="skill-head">
+
+                <h3>{{ skill.skill_name }}</h3>
+
+                <span>{{ skill.percentage }}%</span>
+
+            </div>
+
+            <!-- Description -->
+            <small class="skill-desc">
+                {{ skill.description }}
+            </small>
+
+            <!-- Progress Bar -->
+            <div class="progress">
+
+                <div class="progress-bar" data-progress="{{ skill.percentage }}">
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+<!-- TECHNOLOGIES -->
+
+<section class="tech-section">
+
+    <h2>
+        Technologies & Tools
+    </h2>
+
+    <div class="tech-grid">
+
+        {% for tech in technologies %}
+
+        <div class="tech-card">
+
+            <img src="{{ tech.icon.url }}" alt="{{ tech.name }}">
+
+            <h3>
+                {{ tech.name }}
+            </h3>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+<!-- WHY HIRE ME -->
+
+<section class="why-hire">
+
+    <h2>
+        Why Hire Me?
+    </h2>
+
+    <div class="hire-grid">
+
+        <div class="hire-card">
+            Responsive Web Design
+        </div>
+
+        <div class="hire-card">
+            Django Backend Development
+        </div>
+
+        <div class="hire-card">
+            Clean & Maintainable Code
+        </div>
+
+        <div class="hire-card">
+            Database Management
+        </div>
+
+        <div class="hire-card">
+            REST API Integration
+        </div>
+
+        <div class="hire-card">
+            Problem Solving Skills
+        </div>
+
+    </div>
+
+</section>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        document.querySelectorAll('.progress-bar')
+            .forEach(function (bar) {
+
+                let progress =
+                    bar.dataset.progress;
+
+                bar.style.width =
+                    progress + '%';
+
+            });
+
+    });
+</script>
+
+{% endblock %}

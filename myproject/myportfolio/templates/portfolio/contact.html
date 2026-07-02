@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+
+<section class="contact-hero">
+
+    <span class="badge">
+        Get In Touch
+    </span>
+
+    <h1>
+        Contact Me
+    </h1>
+
+    <p>
+        Have a project idea or job opportunity?
+        Feel free to reach out.
+    </p>
+
+</section>
+
+<!-- CONTACT SECTION -->
+
+<section class="contact-section">
+
+    <div class="contact-container">
+
+        <!-- INFO -->
+
+        <div class="contact-info">
+
+            <h2>Let's Talk</h2>
+
+            <div class="info-card">
+
+                <div class="info-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+
+                <div class="info-content">
+                    <h4>Email</h4>
+                    <p>{{ profile.email }}</p>
+                </div>
+
+            </div>
+
+            <div class="info-card">
+
+                <div class="info-icon">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+
+                <div class="info-content">
+                    <h4>Phone</h4>
+                    <p>{{ profile.phone }}</p>
+                </div>
+
+            </div>
+
+            <div class="info-card">
+
+                <div class="info-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+                <div class="info-content">
+                    <h4>Location</h4>
+                    <p>{{ profile.location }}</p>
+                </div>
+
+            </div>
+
+            <div class="social-links">
+
+                {% if profile.github %}
+                <a href="{{ profile.github }}" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                    GitHub
+                </a>
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        <!-- FORM -->
+
+        <div class="contact-form">
+
+            {% if messages %}
+
+            {% for message in messages %}
+
+            <div class="alert">
+
+                {{ message }}
+
+            </div>
+
+            {% endfor %}
+
+            {% endif %}
+
+            <form method="POST" class="contact-form">
+
+                {% csrf_token %}
+
+                <div class="form-group">
+
+                    <label>
+                        <i class="fa-solid fa-user"></i>
+                        Full Name
+                    </label>
+
+                    <input type="text" name="name" placeholder="Enter your full name" required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>
+                        <i class="fa-solid fa-envelope"></i>
+                        Email Address
+                    </label>
+
+                    <input type="email" name="email" placeholder="Enter your email" required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>
+                        <i class="fa-solid fa-file-lines"></i>
+                        Subject
+                    </label>
+
+                    <input type="text" name="subject" placeholder="Enter subject" required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>
+                        <i class="fa-solid fa-message"></i>
+                        Message
+                    </label>
+
+                    <textarea name="message" rows="6" placeholder="Write your message here..." required></textarea>
+
+                </div>
+
+                <button type="submit">
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                    Send Message
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

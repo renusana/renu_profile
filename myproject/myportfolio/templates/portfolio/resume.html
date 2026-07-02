@@ -1,0 +1,195 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/resume.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+
+<section class="resume-hero">
+
+    <span class="badge">
+        Resume
+    </span>
+
+    <h1>
+        {{ profile.name }}
+    </h1>
+
+    <h3>
+        {{ profile.designation }}
+    </h3>
+
+    <p>
+        {{ profile.short_bio }}
+    </p>
+
+    <a href="{{ profile.resume.url }}" class="download-btn" target="_blank">
+
+        Download Resume
+
+    </a>
+
+</section>
+
+<!-- EDUCATION -->
+
+<section class="resume-section">
+
+    <h2>
+        Education
+    </h2>
+
+    <div class="timeline">
+
+        {% for education in educations %}
+
+        <div class="timeline-card">
+
+            <h3>
+                {{ education.degree }}
+            </h3>
+
+            <h4>
+                {{ education.institution }}
+            </h4>
+
+            <span>
+                {{ education.year }}
+            </span>
+
+            <p>
+                {{ education.percentage }}
+            </p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section class="resume-section">
+
+    <h2>
+        Technical Skills
+    </h2>
+
+    <div class="skills-grid">
+
+        {% for skill in skills %}
+
+        <div class="skill-card">
+
+            {{ skill.skill_name }}
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section class="resume-section">
+
+    <h2>
+        Highlighted Projects
+    </h2>
+
+    <div class="project-grid">
+
+        {% for project in projects %}
+
+        <div class="project-card">
+
+            <img src="{{ project.image.url }}" alt="{{ project.title }}">
+
+            <h3>
+                {{ project.title }}
+            </h3>
+
+            <p>
+                {{ project.description|truncatewords:15 }}
+            </p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+<!-- CERTIFICATIONS -->
+
+<section class="resume-section">
+
+    <h2>
+        Certifications
+    </h2>
+
+    <div class="certificate-grid">
+
+        {% for certificate in certificates %}
+
+        <div class="certificate-card">
+
+            <div class="certificate-icon">
+                🏆
+            </div>
+
+            <h3>
+                {{ certificate.title }}
+            </h3>
+
+            <h4>
+                {{ certificate.organization }}
+            </h4>
+
+            <span>
+                {{ certificate.issue_date }}
+            </span>
+
+            <a href="{{ certificate.certificate_file.url }}" target="_blank" class="certificate-btn">
+
+                View Certificate
+
+            </a>
+
+        </div>
+
+        {% empty %}
+
+        <p class="empty-text">
+            No certificates added yet.
+        </p>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+<!-- OBJECTIVE -->
+
+<section class="objective-section">
+
+    <h2>
+        Career Objective
+    </h2>
+
+    <p>
+        {{ about.description }}
+    </p>
+
+</section>
+
+{% endblock %}

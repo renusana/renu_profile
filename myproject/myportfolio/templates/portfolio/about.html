@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+
+<section class="about-hero">
+
+    <div class="about-image">
+
+        <img src="{{ about.profile_image.url }}" alt="About">
+
+    </div>
+
+    <div class="about-content">
+
+        <span class="badge">
+            About Me
+        </span>
+
+        <h1>
+            {{ about.title }}
+        </h1>
+
+        <p>
+            {{ about.description }}
+        </p>
+
+    </div>
+
+</section>
+
+<!-- PERSONAL INFO -->
+
+<section class="info-section">
+
+    <h2>
+        Personal Information
+    </h2>
+
+    <div class="info-grid">
+
+        <div class="info-card">
+            <strong>Age:</strong>
+            {{ about.age }}
+        </div>
+
+        <div class="info-card">
+            <strong>Email:</strong>
+            {{ about.email }}
+        </div>
+
+        <div class="info-card">
+            <strong>Phone:</strong>
+            {{ about.phone }}
+        </div>
+
+        <div class="info-card">
+            <strong>Location:</strong>
+            {{ about.location }}
+        </div>
+
+        <div class="info-card">
+            <strong>Experience:</strong>
+            {{ about.experience }}
+        </div>
+
+    </div>
+
+</section>
+
+<!-- STATS -->
+
+<section class="stats-section">
+
+    <div class="stat-card">
+
+        <h2>
+            {{ about.projects_completed }}+
+        </h2>
+
+        <p>
+            Projects Completed
+        </p>
+
+    </div>
+
+    <div class="stat-card">
+
+        <h2>
+            {{ about.happy_clients }}+
+        </h2>
+
+        <p>
+            Happy Clients
+        </p>
+
+    </div>
+
+    <div class="stat-card">
+
+        <h2>
+            {{ about.experience }}
+        </h2>
+
+        <p>
+            Experience
+        </p>
+
+    </div>
+
+</section>
+
+<!-- CAREER OBJECTIVE -->
+
+<section class="career-section">
+
+    <h2>
+        Career Objective
+    </h2>
+
+    <p>
+        Seeking opportunities to utilize my Python Full Stack
+        Development skills to create efficient, scalable and
+        user-friendly web applications while continuously
+        learning and contributing to innovative projects.
+    </p>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,264 @@
+.resume-hero {
+    padding: 120px 8%;
+    text-align: center;
+
+    background:
+        linear-gradient(135deg,
+            #eef2ff,
+            #f5f3ff);
+}
+
+.badge {
+    display: inline-block;
+
+    background: #ede9fe;
+
+    color: #6d28d9;
+
+    padding: 10px 20px;
+
+    border-radius: 30px;
+
+    margin-bottom: 20px;
+}
+
+.resume-hero h1 {
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+
+.resume-hero h3 {
+    color: #6d28d9;
+    margin-bottom: 20px;
+}
+
+.resume-hero p {
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.8;
+    color: #666;
+}
+
+.download-btn {
+    display: inline-block;
+
+    margin-top: 30px;
+
+    padding: 14px 30px;
+
+    background:
+        linear-gradient(135deg,
+            #4f46e5,
+            #7c3aed);
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 10px;
+}
+
+.resume-section {
+    padding: 100px 8%;
+}
+
+.resume-section h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 40px;
+}
+
+.timeline {
+    display: grid;
+    gap: 25px;
+}
+
+.timeline-card {
+    background: #fff;
+
+    padding: 30px;
+
+    border-left: 5px solid #6d28d9;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, .08);
+}
+
+.timeline-card h3 {
+    margin-bottom: 10px;
+}
+
+.timeline-card span {
+    color: #6d28d9;
+    font-weight: 600;
+}
+
+.skills-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(200px, 1fr));
+
+    gap: 20px;
+}
+
+.skill-card {
+    background:
+        linear-gradient(135deg,
+            #4f46e5,
+            #7c3aed);
+
+    color: white;
+
+    text-align: center;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    font-weight: 600;
+}
+
+.project-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 25px;
+}
+
+.project-card {
+    background: white;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, .08);
+}
+
+.project-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+}
+
+.project-card h3 {
+    padding: 20px 20px 10px;
+}
+
+.project-card p {
+    padding: 0 20px 20px;
+}
+
+.objective-section {
+    padding: 100px 8%;
+
+    text-align: center;
+
+    background: #f8fafc;
+}
+
+.objective-section h2 {
+    margin-bottom: 25px;
+}
+
+.objective-section p {
+    max-width: 900px;
+    margin: auto;
+    line-height: 1.8;
+}
+
+/* CERTIFICATES */
+
+.certificate-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 25px;
+}
+
+.certificate-card {
+    background: #fff;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, .08);
+
+    transition: .3s;
+}
+
+.certificate-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 35px rgba(79, 70, 229, .15);
+}
+
+.certificate-icon {
+    font-size: 50px;
+
+    margin-bottom: 20px;
+}
+
+.certificate-card h3 {
+    color: #111827;
+
+    margin-bottom: 10px;
+}
+
+.certificate-card h4 {
+    color: #6d28d9;
+
+    margin-bottom: 15px;
+
+    font-size: 16px;
+}
+
+.certificate-card span {
+    display: block;
+
+    color: #6b7280;
+
+    margin-bottom: 20px;
+}
+
+.certificate-btn {
+    display: inline-block;
+
+    padding: 12px 24px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    color: #fff;
+
+    background:
+        linear-gradient(135deg,
+            #4f46e5,
+            #7c3aed);
+
+    transition: .3s;
+}
+
+.certificate-btn:hover {
+    transform: translateY(-2px);
+}
+
+.empty-text {
+    text-align: center;
+
+    color: #6b7280;
+}
