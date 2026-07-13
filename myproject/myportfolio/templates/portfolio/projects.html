@@ -49,9 +49,13 @@
                     {{ project.title }}
                 </h3>
 
-                <p>
-                    {{ project.description|truncatewords:25 }}
+                <p class="project-description">
+                    {{ project.description }}
                 </p>
+
+                <button type="button" class="read-more-btn">
+                    More
+                </button>
 
                 <div class="tech-stack">
                     {{ project.technology }}
@@ -110,5 +114,31 @@
     </a>
 
 </section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const buttons = document.querySelectorAll(".read-more-btn");
+
+        buttons.forEach(function (button) {
+            const description = button.previousElementSibling;
+
+            // Hide button if content doesn't overflow
+            if (description.scrollHeight <= description.clientHeight + 2) {
+                button.style.display = "none";
+                return;
+            }
+
+            button.addEventListener("click", function () {
+                description.classList.toggle("show");
+
+                if (description.classList.contains("show")) {
+                    button.textContent = "Less";
+                } else {
+                    button.textContent = "More";
+                }
+            });
+        });
+    });
+</script>
 
 {% endblock %}

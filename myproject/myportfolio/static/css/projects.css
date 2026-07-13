@@ -105,54 +105,49 @@
 
 .tech-stack {
     display: inline-block;
-
-    background: #ede9fe;
-
+    background: rgba(109, 40, 217, .12);
     color: #6d28d9;
-
-    padding: 10px 15px;
-
-    border-radius: 8px;
-
-    font-size: 14px;
-
-    margin-bottom: 20px;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 22px;
 }
 
 .project-links {
     display: flex;
     gap: 15px;
+    flex-wrap: wrap;
 }
 
 .github-btn,
 .live-btn {
+    flex: 1;
+    text-align: center;
     text-decoration: none;
-
-    padding: 12px 22px;
-
+    padding: 12px 18px;
     border-radius: 10px;
-
     font-weight: 600;
-
-    transition: .3s;
+    transition: .3s ease;
 }
 
 .github-btn {
     background: #111827;
-    color: white;
+    color: #fff;
+}
+
+.github-btn:hover {
+    background: #000;
+    transform: translateY(-3px);
 }
 
 .live-btn {
-    background:
-        linear-gradient(135deg,
-            #4f46e5,
-            #7c3aed);
-
-    color: white;
+    background: #6d28d9;
+    color: #fff;
 }
 
-.github-btn:hover,
 .live-btn:hover {
+    background: #4c1d95;
     transform: translateY(-3px);
 }
 
@@ -215,4 +210,54 @@
         flex-direction: column;
     }
 
+}
+
+/* ===========================
+   PROJECT DESCRIPTION
+=========================== */
+
+.project-description {
+    color: #6b7280;
+    line-height: 1.8;
+    font-size: 15px;
+    margin-bottom: 8px;
+
+    overflow: hidden;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+
+    line-clamp: 3;
+}
+
+.project-description.show {
+    display: block;
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+}
+
+/* ===========================
+   MORE / LESS BUTTON
+=========================== */
+
+.read-more-btn {
+    display: inline-block;
+    background: rgba(109, 40, 217, .12);
+    color: #6d28d9;
+    border: 1px solid rgba(109, 40, 217, .25);
+    border-radius: 30px;
+    padding: 7px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .3s ease;
+    margin-bottom: 18px;
+}
+
+.read-more-btn:hover {
+    background: #6d28d9;
+    color: #fff;
+    border-color: #6d28d9;
+    transform: translateY(-2px);
 }
